@@ -1,58 +1,111 @@
-OASIS INFOBYTES : TASK – 4
-Research Report : Common Network Security Threats
+# 🛡️ OASIS INFOBYTES – TASK 4  
+## 📘 Research Report: Common Network Security Threats  
 
-Subject: Analysis of DoS, MITM, and Spoofing Attacks.
+### 🎯 Subject: Analysis of DoS, MITM, and Spoofing Attacks
 
-1. Introduction
-Modern network security is a constant battle against evolving threats. This report focuses on three primary attack vectors that compromise the CIA Triad (Confidentiality, Integrity, and Availability): Denial of Service (DoS), Man-in-the-Middle (MITM), and Spoofing.  
+---
 
-2. Denial of Service (DoS/DDoS) Attacks
-How it Works
-A DoS attack aims to shut down a machine or network, making it inaccessible to its intended users. DDoS (Distributed Denial of Service) is the more common modern version, where the attacker uses a "botnet" (a network of infected "zombie" computers) to flood a target with overwhelming traffic.  
-•	Layer 3/4 (Volumetric): Flooding the network pipe with UDP/TCP packets.
-•	Layer 7 (Application): Flooding a specific web service with complex requests (e.g., HTTP GET/POST).
-Impact
-1.	Total service outage and loss of revenue.  
-2.	Damage to brand reputation.  
-3.	Often used as a "smoke screen" to distract IT teams while another attack (like data theft) occurs.  
-Mitigation & Prevention
-•	Traffic Scrubbing: Using services like Cloudflare or Akamai to filter malicious traffic before it reaches your server.
-•	Rate Limiting: Restricting the number of requests a single IP can make.
-Real-World Example:
-In late 2024, a massive 29.7 Tbps DDoS attack—the largest ever recorded—was mitigated by Cloudflare, demonstrating the sheer scale of modern botnets.  
+## 1️⃣ 📌 Introduction
 
-3. Man-in-the-Middle (MITM) Attacks
-How it Works
-The attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating with each other. This often involves:  
-•	Interception: Catching the data (e.g., via a Rogue Wi-Fi Hotspot).  
-•	Decryption/Manipulation: Using tools like SSLstrip to downgrade HTTPS to HTTP to read credentials.  
-Impact
-1.	Theft of login credentials and session cookies.  
-2.	Manipulation of financial transactions.  
-3.	Compromise of sensitive corporate data.  
-Mitigation & Prevention 
-•	Encryption: Using strong end-to-end encryption (TLS 1.3).  
-•	VPNs: Tunneling traffic through an encrypted "pipe" so an interceptor only sees gibberish.
-•	MFA: Multi-Factor Authentication ensures that even if a password is stolen, the attacker cannot log in. 
-Real-World Example (2024–2025):
-The state-linked group Salt Typhoon executed deep MITM-style intrusions into U.S. telecom providers (AT&T, Verizon), enabling them to intercept voice calls and track locations. 
+🌐 Modern network security is a constant battle against rapidly evolving cyber threats.  
+This report focuses on **three major attack vectors** that directly compromise the **CIA Triad**:
 
-4. Spoofing Attacks
-How it Works
-Spoofing occurs when an attacker masquerades as a trusted entity to gain access to a system or steal data.
-•	IP Spoofing: Altering the source IP address in a packet to bypass firewalls.  
-•	ARP Spoofing: Associating an attacker's MAC address with the IP address of a legitimate gateway.  
-•	Email Spoofing: Sending emails with a forged "From" address to trick employees into phishing trap.  
-Impact
-1.	Bypassing access control lists (ACLs).
-2.	Enabling MITM attacks (via ARP spoofing).  
-3.	Successful phishing campaigns leading to ransomware.
-Mitigation & Prevention
-•	Packet Filtering: Implementing ingress and egress filtering to ensure incoming packets are from where they claim to be.  
-•	DAI (Dynamic ARP Inspection): A security feature in switches that validates ARP packets in a network.
-•	DMARC/SPF/DKIM: Email authentication protocols that verify the sender's identity.
-Real-World Example (2025): 
-The RaccoonO365 phishing network used advanced spoofing techniques to steal over 5,000 Office 365 credentials before being taken down by Microsoft and Cloudflare in September 2025.
+- 🔐 **Confidentiality**
+- 🧾 **Integrity**
+- ⚙️ **Availability**
 
-5. Conclusion
-Protecting a network is not about a single tool, but a Defense-in-Depth strategy. By combining technical controls (firewalls, encryption) with administrative controls (employee training, incident response plans), organizations can significantly reduce their risk profile against these common threats.
+The threats discussed are:
+- 🚫 Denial of Service (DoS / DDoS)
+- 🔄 Man-in-the-Middle (MITM)
+- 🎭 Spoofing Attacks
+
+---
+
+## 2️⃣ 🚫 Denial of Service (DoS / DDoS) Attacks
+
+### ⚙️ How It Works
+A **DoS attack** attempts to shut down a machine or network, making it unavailable to legitimate users.  
+A **DDoS attack** uses a **botnet 🤖** (infected “zombie” systems) to overwhelm the target.
+
+**Types of DoS Attacks:**
+- 🌊 **Layer 3/4 (Volumetric):** Flooding the network with UDP/TCP packets  
+- 🕸️ **Layer 7 (Application):** Flooding web services with HTTP GET/POST requests  
+
+### 💥 Impact
+1. 💸 Total service outage and revenue loss  
+2. 🏷️ Damage to brand reputation  
+3. 🎭 Used as a distraction while data theft occurs  
+
+### 🛡️ Mitigation & Prevention
+- 🧹 **Traffic Scrubbing:** Cloudflare, Akamai  
+- 🚦 **Rate Limiting:** Restrict excessive requests from a single IP  
+
+### 🌍 Real-World Example
+📅 **2024:** Cloudflare mitigated a **29.7 Tbps DDoS attack**, the largest ever recorded, highlighting the scale of modern botnets.
+
+---
+
+## 3️⃣ 🔄 Man-in-the-Middle (MITM) Attacks
+
+### ⚙️ How It Works
+An attacker secretly **intercepts and alters communication** between two parties who believe they are communicating directly.
+
+**Common Techniques:**
+- 📡 **Interception:** Rogue Wi-Fi hotspots  
+- 🔓 **Decryption/Manipulation:** SSLstrip downgrading HTTPS to HTTP  
+
+### 💥 Impact
+1. 🔑 Theft of login credentials and session cookies  
+2. 💳 Financial transaction manipulation  
+3. 🗂️ Exposure of sensitive corporate data  
+
+### 🛡️ Mitigation & Prevention
+- 🔐 **Strong Encryption:** TLS 1.3  
+- 🛜 **VPNs:** Encrypted communication tunnels  
+- 🔑 **MFA:** Multi-Factor Authentication  
+
+### 🌍 Real-World Example (2024–2025)
+🕵️ **Salt Typhoon**, a state-linked group, conducted MITM-style intrusions on U.S. telecom providers (AT&T, Verizon), enabling call interception and location tracking.
+
+---
+
+## 4️⃣ 🎭 Spoofing Attacks
+
+### ⚙️ How It Works
+Spoofing occurs when attackers **impersonate trusted entities** to gain unauthorized access.
+
+**Common Types:**
+- 🧭 **IP Spoofing:** Fake source IP addresses  
+- 🔁 **ARP Spoofing:** Mapping attacker MAC to gateway IP  
+- 📧 **Email Spoofing:** Forged sender addresses for phishing  
+
+### 💥 Impact
+1. 🚪 Bypassing access control lists (ACLs)  
+2. 🔄 Enabling MITM attacks  
+3. 💣 Phishing leading to ransomware infections  
+
+### 🛡️ Mitigation & Prevention
+- 📦 **Packet Filtering:** Ingress & egress filtering  
+- 🔍 **DAI:** Dynamic ARP Inspection on switches  
+- 📬 **DMARC / SPF / DKIM:** Email sender verification  
+
+### 🌍 Real-World Example (2025)
+🎯 **RaccoonO365 phishing network** used advanced spoofing to steal **5,000+ Office 365 credentials** before being dismantled by Microsoft and Cloudflare.
+
+---
+
+## 5️⃣ ✅ Conclusion
+
+🧠 Network protection requires a **Defense-in-Depth strategy**, not a single solution.
+
+By combining:
+- 🧰 **Technical controls:** Firewalls, encryption, IDS  
+- 🏫 **Administrative controls:** Employee training, incident response  
+
+Organizations can **significantly reduce risk** from DoS, MITM, and Spoofing attacks.
+
+---
+
+### 🏁 Task Status
+✅ **OASIS INFOBYTES – Task 4 Completed**  
+📂 **Beginner-Friendly & Industry-Oriented Report**
